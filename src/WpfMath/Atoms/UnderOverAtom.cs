@@ -7,7 +7,7 @@ namespace WpfMath.Atoms
     // Atom representing other atom with atoms optionally over and under it.
     internal record UnderOverAtom : Atom
     {
-#if !NET452
+#if !NET472
         [return: NotNullIfNotNull("box")]
 #endif
         private static Box? ChangeWidth(Box? box, double maxWidth)

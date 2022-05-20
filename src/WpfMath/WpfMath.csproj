@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1;net452</TargetFrameworks>
+        <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
         <UseWpf>true</UseWpf>
         <OutputType>Library</OutputType>
         <DebugType>Full</DebugType>
@@ -29,6 +29,9 @@ Fixed:
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <SignAssembly>True</SignAssembly>
+        <AssemblyOriginatorKeyFile>C:\Users\magra\source\repos\AsdipSteel\ASDIP Steel.pfx</AssemblyOriginatorKeyFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" $([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net452')) ">
@@ -44,11 +47,8 @@ Fixed:
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     </ItemGroup>
 
-    <ItemGroup>
-        <InternalsVisibleTo Include="$(AssemblyName).Tests" />
-    </ItemGroup>
-
+  
 </Project>
