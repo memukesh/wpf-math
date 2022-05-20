@@ -37,7 +37,7 @@ namespace WpfMath.Atoms
         }
 
 #if !NET452
-        public static bool TryGetAtom(string name, SourceSpan? source, [NotNullWhen(true)] out SymbolAtom? atom)
+        public static bool TryGetAtom(string name, SourceSpan? source,  out SymbolAtom? atom)
 #else
         public static bool TryGetAtom(string name, SourceSpan? source, out SymbolAtom? atom)
 #endif
@@ -57,7 +57,7 @@ namespace WpfMath.Atoms
             TryGetAtom(name, source, out var atom) ? atom : throw new SymbolNotFoundException(name);
 
 #if !NET452
-        public static bool TryGetAtom(SourceSpan name, [NotNullWhen(true)] out SymbolAtom? atom)
+        public static bool TryGetAtom(SourceSpan name,   out SymbolAtom? atom)
 #else
         public static bool TryGetAtom(SourceSpan name, out SymbolAtom? atom)
 #endif
